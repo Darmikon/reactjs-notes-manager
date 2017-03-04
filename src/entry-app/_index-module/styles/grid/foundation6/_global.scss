@@ -1,0 +1,32 @@
+/// Global width of your site. Used by the grid to determine row width.
+/// @type Number
+$global-width: rem-calc(1200) !default;
+
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr !default;
+
+/// Enables flexbox for components that support it.
+/// @type Boolean
+$global-flexbox: false !default;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+////
+/// @group breakpoints
+////
+
+// scss-lint:disable ZeroUnit
+
+/// A list of named breakpoints. You can use these with the `breakpoint()` mixin to quickly create media queries.
+/// @type Map
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+) !default;
+

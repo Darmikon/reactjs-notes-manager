@@ -1,0 +1,44 @@
+.notes-title{
+	position: relative;
+}
+
+.note-add{
+	position: absolute;
+	left: 150px;
+	top: -2px;
+}
+
+.media__zone{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.media{
+	display: flex;
+	padding: 5px;
+	/*border: 1px solid #A9A9A9;*/
+	border-radius: 2px;
+	max-width: 200px;
+	margin-right: 3rem;
+	margin-bottom: 2rem;
+	position: relative;
+}
+
+.media__item{
+	align-self: center;
+	padding-right: 0.3rem;
+}
+
+.media__body h6{
+	width: 120px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.media__remove{
+	position: absolute;
+	top:0;
+	right:0;
+	transform: translate(50%, -50%)
+}

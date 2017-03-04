@@ -1,0 +1,15 @@
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix;
+}
+.float--center{
+  @include center-block;
+}
+.float--right {
+  float: right !important;
+}
+.float--left {
+  float: left !important;
+}

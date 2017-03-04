@@ -1,0 +1,35 @@
+.folder-add{
+	position: absolute;
+	left: 144px;
+	top: -2px;
+}
+
+.folder-title{
+	position: relative;
+}
+
+.trash{
+	transition: all 0.1s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.folder-item:hover .trash{
+	opacity: 1;
+	visibility: visible;
+}
+
+.folder-item{
+	display: flex;
+	align-items: center;
+	width:100%;
+	margin-bottom: 1rem;
+}
+
+.folder-item div:first-child{
+	padding-right: 10px;
+}
+
+.folder-item div:nth-child(2){
+	flex: 1 0 110px;
+}

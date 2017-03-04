@@ -1,0 +1,148 @@
+//reset tables http://meyerweb.com/eric/tools/css/reset/
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+//table {
+//  border-collapse: collapse;
+//  border-spacing: 0;
+//  width: 100%;
+//}
+
+// https://css-tricks.com/complete-guide-table-element/
+
+//display: table                /* <table>     */
+//display: table-row            /* <tr>        */
+//display: table-cell           /* <td>        */
+//display: table-caption        /* <caption>     */
+//display: table-column         /* <col>       */
+//display: table-column-group   /* <colgroup>  */
+//display: table-header-group   /* <thead>     */
+//display: table-footer-group   /* <tfoot>     */
+//display: table-row-group      /* <tbody>     */
+
+//for responsive design
+//table, thead, tbody, tfoot, tr, td, th, caption {
+//  display: block;
+//}
+
+//table,
+.table {
+  display: table;
+  font-size: rem-calc(14);
+  text-align: left;
+  position: relative;
+  min-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+  //border-bottom: rem-calc(2) solid $color--table-border;
+  background-color: $color--table-bg;
+}
+
+.table--zebra tbody tr:nth-child(odd),
+.table--zebra .table__body .table__row:nth-child(odd) {
+  background-color: $color--table-bg-odd;
+}
+
+.table--hover tbody tr:hover,
+.table--hover .table__body .table__row:hover {
+  background-color: $color--table-bg-hover;
+}
+
+.table thead,
+.table__head {
+  display: table-header-group;
+  border-bottom: rem-calc(1) solid $color--table-border;
+  background: $color--table-bg-head;
+
+  tr:last-child, .table__row:last-child {
+    border-bottom: 0 none;
+  }
+}
+
+//double selector to make selector heavier
+.table__head--centered .table__cell,
+.table__head--centered.table__head--centered td,
+.table__head--centered.table__head--centered th,
+.table__body--centered.table__head--centered td,
+.table__body--centered .table__cell,
+.table__footer--centered .table__cell,
+.table__footer--centered.table__head--centered td,
+.table__footer--centered.table__head--centered th,
+.table--centered .table__cell,
+.table--centered.table--centered td,
+.table--centered.table--centered th {
+  text-align: center;
+}
+
+.table tbody,
+.table__body {
+  display: table-row-group;
+}
+
+.table tfoot,
+.table__foot {
+  display: table-footer-group;
+  background: $color--table-bg-foot;
+
+  tr, .table__row {
+    border-bottom: 0 none;
+  }
+
+  tr, .table__row {
+    border-top: rem-calc(1) solid $color--table-border;
+  }
+}
+
+.table tr,
+.table__row {
+  display: table-row;
+
+  border-bottom: rem-calc(1) solid $color--table-border;
+
+  th, td, .table__cell {
+    border-bottom: 0 none;
+  }
+}
+
+.table{
+  tr.selected, .table__row.selected{
+    background: $color--table-row-selected;
+  }
+}
+
+.table tbody tr,
+.table__body .table__row {
+  &:last-child {
+    border-bottom: 0 none;
+  }
+}
+
+.table th,
+.table__head .table__cell,
+.table__foot .table__cell {
+  font-weight: bold;
+}
+
+.table__foot--normal .table__cell {
+  font-weight: normal;
+}
+
+.table th,
+.table td,
+.table__cell {
+  display: table-cell;
+  word-wrap: break-word;
+  padding: $table-padding;
+  text-align: left;
+  //border-right: rem-calc(1) solid $color--table-border;
+  //
+  //&:last-child {
+  //  border-right: 0 none;
+  //}
+}

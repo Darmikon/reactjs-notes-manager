@@ -1,0 +1,59 @@
+// 1. Global
+// ---------
+
+//$global-width: rem-calc(1200);
+$global-width: rem-calc(none);
+//$global-width: rem-calc(none);
+
+// http://foundation.zurb.com/sites/docs/flex-grid.html
+// how to work with flex-grid https://scotch.io/tutorials/get-to-know-the-flexbox-grid-in-foundation-6
+$global-flexbox: true;
+
+//to enable flex grid inside system during simple grid mode
+//$global-flexbox-forced: true; //only for $global-flexbox: false
+//$grid-row-class-name-flex: 'f-row';
+//$grid-column-class-name-flex: 'f-col';
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  sm-: 0,
+  md-: 640px,
+  lg-: 1024px,
+  xl-: 1200px,
+  xxl-: 1440px,
+);
+$breakpoint-classes: (sm- md- lg-);
+
+// 3. The Grid
+// -----------
+
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: (
+  sm-: 20px,
+  md-: 30px,
+);
+$grid-column-align-edge: true;
+$block-grid-max: 8;
+
+$grid-row-class-name: 'row';
+$grid-column-class-name: 'col';
+$grid-column-row-class-name: 'col-row';
+
+// 4. Flex aligns - to create bem classes
+$-zf-flex-justify: (
+  '-left': flex-start,
+  '-right': flex-end,
+  '-center': center,
+  '-justify': space-between,
+  '-spaced': space-around,
+);
+
+$-zf-flex-align: (
+  '-top': flex-start,
+  '-bottom': flex-end,
+  '-middle': center,
+  '-stretch': stretch,
+);

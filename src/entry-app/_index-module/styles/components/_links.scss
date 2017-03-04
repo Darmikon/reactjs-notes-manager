@@ -1,0 +1,14 @@
+// Links
+a {
+  color: $color--link;
+
+  &:hover,
+  &:focus {
+    color: $color--link-hover;
+    text-decoration: none;
+  }
+
+  &:focus {
+    @include tab-focus;
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"presets": [
+		"latest",
+		"stage-0",
+		"react-app"
+	],
+	"compact": true,
+	"plugins": [
+		"transform-promise-to-bluebird",
+		"transform-decorators-legacy",
+		[
+			"babel-root-import",
+			[
+				{
+					"rootPathPrefix": "#",
+					"rootPathSuffix": "src/common"
+				},
+				{
+					"rootPathPrefix": "~",
+					"rootPathSuffix": "src/entry-app"
+				},
+				{
+					"rootPathPrefix": "@",
+					"rootPathSuffix": "src/front-be"
+				}
+			]
+		],
+		[
+			"babel-root-slash-import",
+			{
+				"rootPathSuffix": "src"
+			}
+		]
+	]
+}

@@ -1,0 +1,21 @@
+//https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+.container-flex {
+  display: flex; /* or inline-flex */
+  flex-direction: row; // row | row-reverse | column | column-reverse;
+  flex-wrap: nowrap; //nowrap | wrap | wrap-reverse;
+  //flex-flow: <‘flex-direction’> || <‘flex-wrap’> //default - flex-flow: row nowrap - it's like border: 1px solid
+  justify-content: flex-start; //flex-start | flex-end | center | space-between | space-around;
+  align-items: flex-start; //flex-start | flex-end | center | baseline | stretch;
+  //for multiple rows
+  align-content: flex-start; //flex-start | flex-end | center | space-between | space-around | stretch;
+}
+
+.flex-item{
+  order: 1; //<integer>
+  flex-grow: 0; //<number>; /* default 0 */
+  flex-shrink: 0; //<number>; /* default 1 */
+  flex-basis: auto; //<length> | auto; /* default auto */
+  //flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+  align-self: auto; //auto | flex-start | flex-end | center | baseline | stretch;
+}

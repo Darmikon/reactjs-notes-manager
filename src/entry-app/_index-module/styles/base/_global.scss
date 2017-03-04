@@ -1,0 +1,83 @@
+/* !Source https://github.com/zurb/foundation-sites/blob/develop/scss/_global.scss + additional styles */
+// @mixin foundation-global-styles
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: $color--body-bg;
+  font-size: $global-font-size;
+}
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  // Grid defaults to get images and embeds to work properly
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+
+  // Get rid of gap under images by making them display: inline-block; by default
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// Make sure textarea takes on height automatically
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+// Make select elements are 100% width by default
+select {
+  width: 100%;
+}
+
+// Reset <button> styles created by most browsers
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+}
+
+
+/*! Source https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_scaffolding.scss */
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
+[role="button"] {
+  cursor: pointer;
+}

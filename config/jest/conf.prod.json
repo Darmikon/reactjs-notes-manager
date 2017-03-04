@@ -1,0 +1,34 @@
+{
+	"__use_with_webpack__": "https://facebook.github.io/jest/docs/tutorial-webpack.html#content",
+	"collectCoverage": true,
+	"collectCoverageFrom": ["**/*.{js,jsx}", "!**/node_modules/**", "!**/vendor/**"],
+	"coverageDirectory": "coverage",
+	"setupFiles": [
+		"<rootDir>\\config\\polyfills.js"
+	],
+	"testPathIgnorePatterns": [
+		"<rootDir>[/\\\\](build|docs|node_modules)[/\\\\]"
+	],
+	"testRegex": ".*.spec.js",
+	"testEnvironment": "jsdom",
+	"testURL": "http://localhost",
+	"_scriptPreprocessor": "babel-jest",
+	"_scriptPreprocessorIssue": "http://stackoverflow.com/a/36137733",
+	"unmockedModulePathPatterns": [
+		"<rootDir>/node_modules/react",
+		"<rootDir>/node_modules/react-dom",
+		"<rootDir>/node_modules/react-addons-test-utils"
+	],
+	"transform": {
+		"^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+		"^.+\\.css$": "<rootDir>\\config\\jest\\cssTransform.js",
+		"^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>\\config\\jest\\fileTransform.js",
+		"^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS)$": "<rootDir>\\config\\jest\\emptyTransform.js"
+	},
+	"transformIgnorePatterns": [
+		"[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+	],
+	"moduleNameMapper": {
+		"^react-native$": "react-native-web"
+	}
+}

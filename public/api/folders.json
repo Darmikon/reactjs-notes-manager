@@ -1,0 +1,7 @@
+{
+	"data": [{
+		"_id": "123",
+		"name": "Folder name 1",
+		"nestedParentId": "000"
+	}]
+}

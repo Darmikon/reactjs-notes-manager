@@ -1,0 +1,10 @@
+.css4{
+    font-style: italic;
+    font-size: responsive;
+}
+
+@media screen and (min-width: 800px) {
+    .css4 {
+        background-color: lightgreen;
+    }
+}

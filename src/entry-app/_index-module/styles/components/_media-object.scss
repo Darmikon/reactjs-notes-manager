@@ -1,0 +1,153 @@
+// Refactored by Roman Yudin to support BEM syntax
+// http://wfendler.com/blog/perfecting-the-media-object
+
+/*
+  //docs http://foundation.zurb.com/sites/docs/media-object.html
+  .media
+  .media__item
+  //for flexbox mode - the next class should be added to main block
+  .media__item--body
+  //vertical align
+  .media__item--middle
+  .media__item--bottom
+  // Images will get a width of 100%
+  #{$-zf-zero-breakpoint}-stack-for
+  .sm--stack-for
+
+  //for flex mode alignment have to be done using helper classes
+  //for horizontal moves
+  $-zf-flex-justify: (
+    '-left': flex-start,
+    '-right': flex-end,
+    '-center': center,
+    '-justify': space-between,
+    '-spaced': space-around,
+  );
+  .align--left
+
+  //vertical
+  $-zf-flex-align: (
+    '-top': flex-start,
+    '-bottom': flex-end,
+    '-middle': center,
+    '-stretch': stretch,
+  );
+
+  .align-self--middle
+*/
+
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+////
+/// @group media-object
+////
+
+/// Bottom margin of a media object.
+/// @type Number
+$mediaobject-margin-bottom: $global-margin !default;
+
+/// Left and right padding on sections within a media object.
+/// @type Number
+$mediaobject-section-padding: $global-padding !default;
+
+/// Width of images within a media object, when the object is stacked vertically. Set to 'auto' to use the image's natural width.
+/// @type Number
+$mediaobject-image-width-stacked: 100% !default;
+
+// Internal variables used for text direction
+$global-left: left !default;
+$global-right: right !default;
+
+/// Adds styles for a media object container.
+@mixin media-object-container {
+  margin-bottom: $mediaobject-margin-bottom;
+  display: if($global-flexbox, flex, block);
+
+  @if $global-flexbox {
+    flex-wrap: nowrap;
+  }
+}
+
+/// Adds styles for sections within a media object.
+/// @param {Number} $padding [$mediaobject-section-padding] - Padding between sections.
+@mixin media-object-section($padding: $mediaobject-section-padding) {
+  @if $global-flexbox {
+    flex: 0 0 auto;
+  }
+  @else {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  &:first-child {
+    padding-#{$global-right}: $padding;
+  }
+
+  &:last-child:not(:nth-child(2)) {
+    padding-#{$global-left}: $padding;
+  }
+}
+
+/// Adds styles to stack sections of a media object. Apply this to the section elements, not the container.
+@mixin media-object-stack {
+  padding: 0;
+  padding-bottom: $mediaobject-section-padding;
+
+  @if $global-flexbox {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  @else {
+    display: block;
+  }
+
+  img {
+    width: $mediaobject-image-width-stacked;
+  }
+}
+
+@mixin foundation-media-object {
+  .media {
+    @include media-object-container;
+
+    img {
+      max-width: none;
+    }
+
+    @if $global-flexbox {
+      &.#{$-zf-zero-breakpoint}-stack-for {
+        flex-wrap: wrap;
+      }
+    }
+  //
+    &.#{$-zf-zero-breakpoint}-stack-for .media__item {
+      @include breakpoint($-zf-zero-breakpoint only) {
+        @include media-object-stack;
+      }
+    }
+  }
+
+  .media__item {
+    @include media-object-section;
+
+    @if $global-flexbox {
+      // scss-lint:disable ZeroUnit
+      &.media__item--body {
+        flex: 1 1 0px;
+      }
+    }
+    @else {
+      &.media__item--middle {
+        vertical-align: middle;
+      }
+
+      &.media__item--bottom {
+        vertical-align: bottom;
+      }
+    }
+  }
+}
+
+@include foundation-media-object;

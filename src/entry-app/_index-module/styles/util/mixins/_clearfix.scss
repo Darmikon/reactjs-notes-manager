@@ -1,0 +1,25 @@
+////https://css-tricks.com/snippets/sass/extend-wrapper-aka-mixtend/
+////works bad with media quieries - requires additional syntax
+//@mixin clearfix($extend: true) {
+//  @if $extend {
+//    @extend %clearfix;
+//  } @else {
+//    &:after {
+//      content: '';
+//      display: table;
+//      clear: both;
+//    }
+//  }
+//}
+//
+//%clearfix {
+//  @include clearfix($extend: false);
+//}
+
+@mixin clearfix(){
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

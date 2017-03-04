@@ -1,0 +1,29 @@
+@import 'global';
+@import 'flex-align/flex';
+@import 'visibility/visibility';
+// to customize columns mixins can be used http://foundation.zurb.com/sites/docs/grid.html
+@import 'grid';
+//@import 'foundation';
+//custom mixin for forced flex grid mode inside simple grid
+@import 'flex-grid-forced';
+
+
+@mixin foundation-grid-all {
+  @include foundation-visibility-classes;
+
+  @if not $global-flexbox {
+    @include foundation-grid(
+      $row: $grid-row-class-name
+      ,$column: $grid-column-class-name
+      ,$column-row: $grid-column-row-class-name
+    );
+
+    @if $global-flexbox-forced {
+      @include foundation-flex-grid-forced;
+    }
+  }
+  @else {
+    @include foundation-flex-classes;
+    @include foundation-flex-grid;
+  }
+}

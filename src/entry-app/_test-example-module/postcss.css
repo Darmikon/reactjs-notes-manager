@@ -1,0 +1,21 @@
+/* Testing autoprefixer */
+.autoprefixer {
+	display: flex;
+	border-radius: 20px;
+	opacity: .4
+}
+
+/* Testing cssnext */
+.cssnext {
+	background: color(red alpha(-10%));
+}
+
+/* Testing precss */
+.precss {
+	@if 3 < 5 {
+		background: green;
+	}
+	@else {
+		background: blue;
+	}
+}

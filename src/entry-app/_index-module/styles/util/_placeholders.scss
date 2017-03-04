@@ -1,0 +1,35 @@
+//placeholder http://www.sitepoint.com/sass-mixin-placeholder/
+// will output groupped selectors
+//
+//%center {
+//  margin-left: auto;
+//  margin-right: auto;
+//  display: block;
+//}
+//
+//@mixin skin($color, $size) {
+//  @extend %center;
+//  background: $color;
+//  height: $size;
+//}
+//
+//a { @include skin(pink, 10em) }
+//b { @include skin(blue, 90px) }
+
+/*
+a, b {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+a {
+  background: pink;
+  height: 10em;
+}
+
+b {
+  background: blue;
+  height: 90px;
+}
+*/

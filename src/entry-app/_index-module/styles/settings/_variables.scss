@@ -1,0 +1,35 @@
+////these variables can be overwritten in settings/
+//
+///*
+//1. Global
+//2. Links
+//3. Tables
+//*/
+//
+//// 1.Global
+//$color--body-bg: map_get($shades, white)!default;
+//
+//// 2.Links
+//$color--link: map-get($blue, base) !default;
+//$color--link-hover: map-get($blue, lighten-1) !default;
+//
+//// 3.Tables
+//$table-padding: 0.5rem 0.625rem 0.625rem !default;
+//$table-border-color: map_get($grey, darken-1) !default;
+//$color--table-bg: $color--body-bg !default;
+//$color--table-bg-odd: map-get($grey, lighten-5) !default;
+//$color--table-bg-hover: map-get($grey, lighten-4) !default;
+//$color--table-bg-head: #f1f1f1 !default;
+//$color--table-bg-foot: #f1f1f1 !default;
+
+
+
+//buttons
+$button-sizes: (
+  xs: 0.6rem,
+  sm: 0.75rem,
+  md: 0.9rem,
+  lg: 1.25rem,
+) !default;
+
+$button-fill: 'hollow';
