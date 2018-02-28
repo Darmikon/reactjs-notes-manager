@@ -17,7 +17,7 @@ var checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 var formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
 var getProcessForPort = require('react-dev-utils/getProcessForPort');
 var openBrowser = require('react-dev-utils/openBrowser');
-var prompt = require('react-dev-utils/prompt');
+var prompt = require('inquirer').prompt;
 var pathExists = require('path-exists');
 var config = require('../config/webpack.config.dev');
 var paths = require('../config/paths');
@@ -306,7 +306,8 @@ detect(DEFAULT_PORT).then(port => {
         ((existingProcess) ? ' Probably:\n  ' + existingProcess : '')) +
         '\n\nWould you like to run the app on another port instead?';
 
-    prompt(question, true).then(shouldChangePort => {
+    prompt([{type: 'confirm', name: 'port', message: 'Change port?'}]).then(shouldChangePort => {
+      console.log('port');
       if (shouldChangePort) {
         run(port);
       }
